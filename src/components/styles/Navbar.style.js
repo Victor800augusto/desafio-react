@@ -13,4 +13,9 @@ export const StyledNavbar = styled.nav`
   align-items: center;
   padding: 1rem 3rem;
   color: white;
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
 `;
