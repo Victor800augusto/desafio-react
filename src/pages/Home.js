@@ -1,11 +1,15 @@
 import React from "react";
 import ItemCardList from "../components/ItemCardList";
-import { useGlobalContext } from "../context";
+import CustomSelect from "../components/CustomSelect";
+import { StyledHome } from "../components/styles/Home.style";
 
 const Home = () => {
-  const { data } = useGlobalContext();
-  console.log(data);
-  return <ItemCardList />;
+  return (
+    <StyledHome>
+      <CustomSelect />
+      <ItemCardList />
+    </StyledHome>
+  );
 };
 
 export default Home;
