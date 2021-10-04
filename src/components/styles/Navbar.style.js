@@ -5,17 +5,29 @@ export const StyledNavbar = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 1rem 3rem;
-  background: linear-gradient(
-    133.94deg,
-    #8256d5 1.41%,
-    #3a31c8 23.29%,
-    #150855 76.15%,
-    #140853 101.52%
-  );
+  max-width: 65rem;
+  margin: 0 auto;
   color: white;
 
   a {
     text-decoration: none;
     color: white;
+  }
+`;
+
+export const CartItems = styled.span`
+  display: flex;
+  justify-content: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: white;
+  border-radius: 50%;
+
+  p {
+    color: black;
   }
 `;

@@ -6,6 +6,15 @@ const GlobalStyles = createGlobalStyle`
         margin:0;
         box-sizing: border-box;
     }
+    header{
+        background: linear-gradient(
+    133.94deg,
+    #8256d5 1.41%,
+    #3a31c8 23.29%,
+    #150855 76.15%,
+    #140853 101.52%
+  );
+    }
     body{
         font-family:Tahoma, Arial, sans-serif;
         background: #f2f2f2;

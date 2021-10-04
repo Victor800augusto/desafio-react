@@ -1,6 +1,6 @@
 import React from "react";
-import { StyledNavbar } from "./styles/Navbar.style";
-import { Link } from "react-router-dom";
+import { StyledNavbar, CartItems } from "./styles/Navbar.style";
+import { Link, NavLink } from "react-router-dom";
 import { BsCart } from "react-icons/bs";
 
 const Navbar = () => {
@@ -9,8 +9,11 @@ const Navbar = () => {
       <Link to="/">
         <h1>GamesStore</h1>
       </Link>
-      <Link to="/Checkout">
-        <BsCart />
+      <Link to="/Checkout" style={{ position: "relative" }}>
+        <BsCart size={35} />
+        <CartItems>
+          <p>1</p>
+        </CartItems>
       </Link>
     </StyledNavbar>
   );
