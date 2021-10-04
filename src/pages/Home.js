@@ -1,11 +1,11 @@
 import React from "react";
+import ItemCardList from "../components/ItemCardList";
+import { useGlobalContext } from "../context";
 
 const Home = () => {
-  return (
-    <section>
-      <h1>Home</h1>
-    </section>
-  );
+  const { data } = useGlobalContext();
+  console.log(data);
+  return <ItemCardList />;
 };
 
 export default Home;
