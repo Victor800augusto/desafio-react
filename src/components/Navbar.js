@@ -1,6 +1,6 @@
 import React from "react";
 import { StyledNavbar, CartItems } from "./styles/Navbar.style";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { BsCart } from "react-icons/bs";
 
 const Navbar = () => {
