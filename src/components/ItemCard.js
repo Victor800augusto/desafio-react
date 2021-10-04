@@ -11,9 +11,9 @@ const ItemCard = ({ id, name, price, score, image }) => {
     <StyledItemCard>
       <img src={`assets/${image}`} alt="" />
       <ItemCardInfo>
-        <h3>{name}</h3>
-        <h3>score: {score}</h3>
-        <h3>R$:{price}</h3>
+        <h4>{name}</h4>
+        <h4>Score: {score}</h4>
+        <h3>R$ {price}</h3>
       </ItemCardInfo>
       <Button>
         Adicionar ao carrinho

@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const StyledItemCard = styled.div`
   display: flex;
   flex-direction: column;
-  width: 13.75rem;
   padding-top: 0.625rem;
+  width: 13.75rem;
   background: white;
   border-radius: 5px;
 
@@ -13,10 +13,25 @@ export const StyledItemCard = styled.div`
   }
 `;
 export const ItemCardInfo = styled.div`
+  display:flex;
+  flex-direction:column;
+  flex-grow: 1;
   padding: 0.625rem;
+
+  h4:first-child{
+    font-weight:600;
+  }
+  h3{
+    color: #8255d5;
+    margin-top:auto;
+  }
 `;
 
 export const Button = styled.button`
+  display: flex;
+  padding: 1rem 0.3rem;
+  align-items: center;
+  
   background: linear-gradient(
     133.94deg,
     #8256d5 1.41%,
@@ -24,11 +39,15 @@ export const Button = styled.button`
     #150855 76.15%,
     #140853 101.52%
   );
+  border-bottom-left-radius:5px;
+  border-bottom-right-radius:5px;
   color: white;
   font-size: 1rem;
-  padding: 1rem 0.75rem;
-  display: flex;
-  align-items: center;
+  font-weight:bold;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const CartIcon = styled.img`

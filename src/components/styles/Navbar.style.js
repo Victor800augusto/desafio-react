@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
 export const StyledNavbar = styled.nav`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
   background: linear-gradient(
     133.94deg,
     #8256d5 1.41%,
@@ -8,10 +12,6 @@ export const StyledNavbar = styled.nav`
     #150855 76.15%,
     #140853 101.52%
   );
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 3rem;
   color: white;
 
   a {
