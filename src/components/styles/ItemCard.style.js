@@ -5,6 +5,7 @@ export const StyledItemCard = styled.div`
   flex-direction: column;
   padding-top: 0.625rem;
   width: 13.75rem;
+  height: 25rem;
   background: white;
   border-radius: 5px;
 
@@ -13,17 +14,17 @@ export const StyledItemCard = styled.div`
   }
 `;
 export const ItemCardInfo = styled.div`
-  display:flex;
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
   padding: 0.625rem;
 
-  h4:first-child{
-    font-weight:600;
+  h4:first-child {
+    font-weight: 600;
   }
-  h3{
+  h3 {
     color: #8255d5;
-    margin-top:auto;
+    margin-top: auto;
   }
 `;
 
@@ -31,7 +32,7 @@ export const Button = styled.button`
   display: flex;
   padding: 1rem 0.3rem;
   align-items: center;
-  
+
   background: linear-gradient(
     133.94deg,
     #8256d5 1.41%,
@@ -39,11 +40,11 @@ export const Button = styled.button`
     #150855 76.15%,
     #140853 101.52%
   );
-  border-bottom-left-radius:5px;
-  border-bottom-right-radius:5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   color: white;
   font-size: 1rem;
-  font-weight:bold;
+  font-weight: bold;
 
   &:hover {
     cursor: pointer;

@@ -1,6 +1,7 @@
 import React from "react";
 import Select from "react-select";
 import { StyledCustomSelect } from "./styles/CustomSelect.style";
+import { useGlobalContext } from "../context";
 
 const options = [
   { value: "priceAsc", label: "Preço Crescente" },
@@ -21,6 +22,8 @@ const styles = {
 };
 
 const CustomSelect = () => {
+  const { handleChange } = useGlobalContext();
+
   return (
     <StyledCustomSelect>
       <Select
@@ -28,6 +31,7 @@ const CustomSelect = () => {
         isSearchable={false}
         placeholder="Selecione..."
         styles={styles}
+        onChange={handleChange}
       ></Select>
     </StyledCustomSelect>
   );
