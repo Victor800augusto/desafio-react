@@ -10,7 +10,7 @@ const initialCart = [
     price: 197.88,
     score: 100,
     image: "super-mario-odyssey.png",
-    amount: 1,
+    amount: 2,
   },
   {
     id: 201,
@@ -26,7 +26,7 @@ const initialCart = [
     price: 119.5,
     score: 250,
     image: "the-witcher-iii-wild-hunt.png",
-    amount: 1,
+    amount: 5,
   },
 ];
 

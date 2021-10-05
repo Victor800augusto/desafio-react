@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <StyledNavbar>
       <Link to="/">
-        <h1>GamesStore</h1>
+        <h2>GamesStore</h2>
       </Link>
       <Link to="/Checkout" style={{ position: "relative" }}>
         <BsCart size={35} />

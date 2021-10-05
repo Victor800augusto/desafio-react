@@ -20,10 +20,10 @@ const GlobalStyles = createGlobalStyle`
         background: #f2f2f2;
     }
     h1{
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
     h2{
-        font-size: 1.25rem;
+        font-size: 1.5rem;
     }
     h3{
         font-size: 1.125rem;
@@ -31,6 +31,18 @@ const GlobalStyles = createGlobalStyle`
     h4{
         font-size: 0.875rem;
         font-weight:400;
+    }
+
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+    -moz-appearance: textfield;
     }
 `;
 

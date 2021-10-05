@@ -5,26 +5,44 @@ import {
   ArrowUp,
   Arrow,
   ButtonAmount,
+  ItemCartInfo,
+  PriceInfo,
+  ScoreInfo,
+  AmountContainer,
+  ButtonRemove,
+  AmountInfo,
+  TotalAmountInfo,
 } from "./styles/CartItem.style";
+import { BsXLg } from "react-icons/bs";
 
 const CartItem = ({ id, image, name, price, score, amount }) => {
+  const { cart } = useGlobalContext();
+
+  let total = amount * price;
+
   return (
     <StyledCartItem>
       <img src={`assets/${image}`} alt={name} />
-      <div>
+      <ItemCartInfo>
         <h3>{name}</h3>
-        <h3>Score {score}</h3>
-        <h2>R$ {price}</h2>
-      </div>
-      <div>
+        <ScoreInfo>Score {score}</ScoreInfo>
+      </ItemCartInfo>
+      <PriceInfo>R$ {price}</PriceInfo>
+      <AmountContainer>
         <ButtonAmount onClick={() => console.log("increase")}>
           <ArrowUp src="assets/arrow-down-icon.svg" alt="" />
         </ButtonAmount>
-        <p>{amount}</p>
+        <AmountInfo>
+          <p>{amount}</p>
+        </AmountInfo>
         <ButtonAmount onClick={() => console.log("decrease")}>
           <Arrow src="assets/arrow-down-icon.svg" alt="" />
         </ButtonAmount>
-      </div>
+        <ButtonRemove>
+          <BsXLg color="red" size={20} />
+        </ButtonRemove>
+      </AmountContainer>
+      <TotalAmountInfo>R$ {total}</TotalAmountInfo>
     </StyledCartItem>
   );
 };
