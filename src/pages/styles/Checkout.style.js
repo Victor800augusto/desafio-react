@@ -24,8 +24,7 @@ export const Button = styled.button`
     #150855 76.15%,
     #140853 101.52%
   );
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-radius: 0.313rem;
   color: white;
   font-size: 1rem;
   font-weight: bold;

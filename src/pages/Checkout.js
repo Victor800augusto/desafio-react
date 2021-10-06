@@ -37,9 +37,10 @@ const Checkout = () => {
     return (
       <CartItemEmpty>
         <h1>Carrinho vazinho</h1>
-        <Link to="/">
-          <Button>Voltar para a página principal</Button>
-        </Link>
+
+        <Button>
+          <Link to="/">Voltar para a página principal</Link>
+        </Button>
       </CartItemEmpty>
     );
   }

@@ -35,6 +35,7 @@ const GlobalStyles = createGlobalStyle`
 
     a {
     text-decoration: none;
+    color:white;
   }
 
     /* Chrome, Safari, Edge, Opera */

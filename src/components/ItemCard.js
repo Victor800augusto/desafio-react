@@ -18,7 +18,7 @@ const ItemCard = (item) => {
         <h4>Score: {item.score}</h4>
         <h3>R$ {item.price}</h3>
       </ItemCardInfo>
-      <Button onClick={() => addToCart(item)}>
+      <Button onClick={() => addToCart(item)} data-tip data-for="addTip">
         Adicionar ao carrinho
         <CartIcon src="assets/cart-icon.svg" />
       </Button>

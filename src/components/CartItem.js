@@ -44,11 +44,9 @@ const CartItem = ({ id, image, name, price, score, amount }) => {
         </ButtonRemove>
         <ReactTooltip
           id="removeTip"
-          place="top"
-          effect="float"
           backgroundColor="white"
           textColor="black"
-          border="true"
+          border
           borderColor="black"
         >
           {" "}
