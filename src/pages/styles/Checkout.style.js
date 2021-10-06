@@ -38,6 +38,15 @@ export const CartItemsContainer = styled.section`
   max-width: 65rem;
   margin: 0 auto;
   padding: 1.25rem;
+  @media (max-width: 790px) {
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+  }
+  @media (max-width: 350px) {
+    padding: 1rem;
+  }
 `;
 
 export const ButtonRemoveAll = styled.button`

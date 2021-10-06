@@ -13,6 +13,7 @@ import {
   ButtonRemove,
   AmountInfo,
   TotalAmountInfo,
+  ImgContainer,
 } from "./styles/CartItem.style";
 import { BsXLg } from "react-icons/bs";
 
@@ -23,7 +24,10 @@ const CartItem = ({ id, image, name, price, score, amount }) => {
 
   return (
     <StyledCartItem>
-      <img src={`assets/${image}`} alt={name} />
+      <ImgContainer>
+        <img src={`assets/${image}`} alt={name} />
+      </ImgContainer>
+
       <ItemCartInfo>
         <h3>{name}</h3>
         <ScoreInfo>Score {score}</ScoreInfo>

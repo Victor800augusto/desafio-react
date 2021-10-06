@@ -13,6 +13,9 @@ export const StyledNavbar = styled.nav`
     text-decoration: none;
     color: white;
   }
+  @media (max-width: 350px) {
+    padding: 1rem 1.5rem;
+  }
 `;
 
 export const CartItems = styled.span`
