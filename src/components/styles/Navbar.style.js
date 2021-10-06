@@ -18,7 +18,7 @@ export const StyledNavbar = styled.nav`
 export const CartItems = styled.span`
   display: flex;
   justify-content: center;
-  justify-content: center;
+  align-items: center;
   position: absolute;
   bottom: 1.25rem;
   left: 1rem;

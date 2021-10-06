@@ -5,37 +5,47 @@ import {
   CartItemsContainer,
   CheckoutTotal,
   CheckoutTotalContainer,
+  ButtonRemoveAll,
 } from "./styles/Checkout.style";
+import { BsXLg } from "react-icons/bs";
 
 const Checkout = () => {
-  const { cart } = useGlobalContext();
+  const { cart, clearCart } = useGlobalContext();
   let subTotal = 0;
   let shipping = 0;
   let cartTotalAmount = 0;
   let total = 0;
 
-  if (cart) {
+  if (cart.length > 0) {
     for (let i = 0; i < cart.length; i++) {
       subTotal += cart[i].price * cart[i].amount;
       cartTotalAmount += cart[i].amount;
     }
+    subTotal = parseFloat(subTotal.toFixed(2));
     if (subTotal > 250.0) {
       shipping = 0;
     } else {
       shipping = cartTotalAmount * 10;
     }
-    total = subTotal + shipping;
+    total = parseFloat((subTotal + shipping).toFixed(2));
   }
 
   if (cart.length === 0) {
-    <section>
-      <h4>Carrinho vazinho</h4>
-    </section>;
+    return (
+      <section>
+        <h4>Carrinho vazinho</h4>
+      </section>
+    );
   }
+
   return (
     <>
       <CartItemsContainer>
         <h1>Carrinho de compras</h1>
+        <ButtonRemoveAll onClick={() => clearCart()}>
+          Remover todos os itens
+          <BsXLg color="red" size={20} />
+        </ButtonRemoveAll>
         {cart.map((item) => {
           return <CartItem key={item.id} {...item} />;
         })}

@@ -1,4 +1,5 @@
-import React, { useState, useContext, useEffect, useReducer } from "react";
+import React, { useState, useContext, useReducer } from "react";
+import reducer from "./reducer";
 import ItemList from "./data/products.json";
 
 const AppContext = React.createContext();
@@ -30,16 +31,51 @@ const initialCart = [
   },
 ];
 
+const initialState = {
+  cart: initialCart,
+  amount: 0,
+};
+
 const AppProvider = ({ children }) => {
-  const [cart, setCart] = useState(initialCart);
+  const [state, dispatch] = useReducer(reducer, initialState);
   const [orderBy, setOrderBy] = useState("priceAsc");
+
+  const clearCart = () => {
+    dispatch({ type: "CLEAR_CART" });
+  };
+
+  const remove = (id) => {
+    dispatch({ type: "REMOVE", payload: id });
+  };
+
+  const increase = (id) => {
+    dispatch({ type: "INCREASE", payload: id });
+  };
+  const decrease = (id) => {
+    dispatch({ type: "DECREASE", payload: id });
+  };
+  const addToCart = (item) => {
+    dispatch({ type: "ADD", payload: item });
+  };
 
   const handleChange = (selectedOption) => {
     setOrderBy(selectedOption.value);
   };
 
   return (
-    <AppContext.Provider value={{ ItemList, handleChange, orderBy, cart }}>
+    <AppContext.Provider
+      value={{
+        ItemList,
+        handleChange,
+        orderBy,
+        ...state,
+        clearCart,
+        remove,
+        increase,
+        decrease,
+        addToCart,
+      }}
+    >
       {children}
     </AppContext.Provider>
   );

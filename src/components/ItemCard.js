@@ -1,4 +1,5 @@
 import React from "react";
+import { useGlobalContext } from "../context";
 import {
   StyledItemCard,
   ItemCardInfo,
@@ -6,16 +7,18 @@ import {
   CartIcon,
 } from "./styles/ItemCard.style";
 
-const ItemCard = ({ id, name, price, score, image }) => {
+const ItemCard = (item) => {
+  const { addToCart } = useGlobalContext();
+
   return (
     <StyledItemCard>
-      <img src={`assets/${image}`} alt="" />
+      <img src={`assets/${item.image}`} alt="" />
       <ItemCardInfo>
-        <h4>{name}</h4>
-        <h4>Score: {score}</h4>
-        <h3>R$ {price}</h3>
+        <h4>{item.name}</h4>
+        <h4>Score: {item.score}</h4>
+        <h3>R$ {item.price}</h3>
       </ItemCardInfo>
-      <Button>
+      <Button onClick={() => addToCart(item)}>
         Adicionar ao carrinho
         <CartIcon src="assets/cart-icon.svg" />
       </Button>

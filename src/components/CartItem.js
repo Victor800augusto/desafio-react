@@ -16,9 +16,9 @@ import {
 import { BsXLg } from "react-icons/bs";
 
 const CartItem = ({ id, image, name, price, score, amount }) => {
-  const { cart } = useGlobalContext();
+  const { remove, increase, decrease } = useGlobalContext();
 
-  let total = amount * price;
+  let total = parseFloat((amount * price).toFixed(2));
 
   return (
     <StyledCartItem>
@@ -29,16 +29,16 @@ const CartItem = ({ id, image, name, price, score, amount }) => {
       </ItemCartInfo>
       <PriceInfo>R$ {price}</PriceInfo>
       <AmountContainer>
-        <ButtonAmount onClick={() => console.log("increase")}>
+        <ButtonAmount onClick={() => decrease(id)}>
           <ArrowUp src="assets/arrow-down-icon.svg" alt="" />
         </ButtonAmount>
         <AmountInfo>
           <p>{amount}</p>
         </AmountInfo>
-        <ButtonAmount onClick={() => console.log("decrease")}>
+        <ButtonAmount onClick={() => increase(id)}>
           <Arrow src="assets/arrow-down-icon.svg" alt="" />
         </ButtonAmount>
-        <ButtonRemove>
+        <ButtonRemove onClick={() => remove(id)}>
           <BsXLg color="red" size={20} />
         </ButtonRemove>
       </AmountContainer>

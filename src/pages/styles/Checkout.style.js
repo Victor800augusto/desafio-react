@@ -6,6 +6,22 @@ export const CartItemsContainer = styled.section`
   padding: 1.25rem;
 `;
 
+export const ButtonRemoveAll = styled.button`
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  margin-left: auto;
+  background: transparent;
+  border: solid red 0.2rem;
+  cursor: pointer;
+  color: red;
+  font-weight: bold;
+
+  svg {
+    margin-left: 0.5rem;
+  }
+`;
+
 export const CheckoutTotalContainer = styled.section`
   padding: 1.25rem;
   max-width: 65rem;
