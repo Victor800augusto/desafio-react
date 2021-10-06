@@ -33,6 +33,10 @@ const GlobalStyles = createGlobalStyle`
         font-weight:400;
     }
 
+    a {
+    text-decoration: none;
+  }
+
     /* Chrome, Safari, Edge, Opera */
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {

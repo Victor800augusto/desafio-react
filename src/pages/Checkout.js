@@ -1,11 +1,14 @@
 import React from "react";
 import { useGlobalContext } from "../context";
+import { Link } from "react-router-dom";
 import CartItem from "../components/CartItem";
 import {
   CartItemsContainer,
   CheckoutTotal,
   CheckoutTotalContainer,
   ButtonRemoveAll,
+  CartItemEmpty,
+  Button,
 } from "./styles/Checkout.style";
 import { BsXLg } from "react-icons/bs";
 
@@ -32,9 +35,12 @@ const Checkout = () => {
 
   if (cart.length === 0) {
     return (
-      <section>
-        <h4>Carrinho vazinho</h4>
-      </section>
+      <CartItemEmpty>
+        <h1>Carrinho vazinho</h1>
+        <Link to="/">
+          <Button>Voltar para a página principal</Button>
+        </Link>
+      </CartItemEmpty>
     );
   }
 

@@ -1,5 +1,40 @@
 import styled from "styled-components";
 
+export const CartItemEmpty = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 65rem;
+  margin: 0 auto;
+  padding: 1.25rem;
+  text-align: center;
+`;
+
+export const Button = styled.button`
+  display: flex;
+  padding: 1rem 0.3rem;
+  align-items: center;
+  max-width: 17.5rem;
+  margin-top: 3rem;
+
+  background: linear-gradient(
+    133.94deg,
+    #8256d5 1.41%,
+    #3a31c8 23.29%,
+    #150855 76.15%,
+    #140853 101.52%
+  );
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
 export const CartItemsContainer = styled.section`
   max-width: 65rem;
   margin: 0 auto;

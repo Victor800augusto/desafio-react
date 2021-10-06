@@ -1,4 +1,5 @@
 import React from "react";
+import ReactTooltip from "react-tooltip";
 import { useGlobalContext } from "../context";
 import {
   StyledCartItem,
@@ -38,9 +39,21 @@ const CartItem = ({ id, image, name, price, score, amount }) => {
         <ButtonAmount onClick={() => increase(id)}>
           <Arrow src="assets/arrow-down-icon.svg" alt="" />
         </ButtonAmount>
-        <ButtonRemove onClick={() => remove(id)}>
+        <ButtonRemove onClick={() => remove(id)} data-tip data-for="removeTip">
           <BsXLg color="red" size={20} />
         </ButtonRemove>
+        <ReactTooltip
+          id="removeTip"
+          place="top"
+          effect="float"
+          backgroundColor="white"
+          textColor="black"
+          border="true"
+          borderColor="black"
+        >
+          {" "}
+          Remover item
+        </ReactTooltip>
       </AmountContainer>
       <TotalAmountInfo>R$ {total}</TotalAmountInfo>
     </StyledCartItem>
