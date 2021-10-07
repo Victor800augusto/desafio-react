@@ -8,7 +8,11 @@ import {
 } from "./styles/ItemCard.style";
 
 const ItemCard = (item) => {
-  const { addToCart } = useGlobalContext();
+  //
+  let newItem = { ...item, amount: 1 };
+
+  //
+  const { increase, cart, newItemCart } = useGlobalContext();
 
   return (
     <StyledItemCard>
@@ -18,7 +22,17 @@ const ItemCard = (item) => {
         <h4>Score: {item.score}</h4>
         <h3>R$ {item.price}</h3>
       </ItemCardInfo>
-      <Button onClick={() => addToCart(item)} data-tip data-for="addTip">
+      <Button
+        onClick={() => {
+          if (cart.find((element) => element.id === newItem.id)) {
+            increase(item.id);
+          } else {
+            newItemCart(newItem);
+          }
+        }}
+        data-tip
+        data-for="addTip"
+      >
         Adicionar ao carrinho
         <CartIcon src="assets/cart-icon.svg" />
       </Button>

@@ -6,6 +6,7 @@ import { useGlobalContext } from "../context";
 
 const Navbar = () => {
   const { cart } = useGlobalContext();
+
   let cartTotalAmount = 0;
   if (cart.length) {
     for (let i = 0; i < cart.length; i++) {

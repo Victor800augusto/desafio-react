@@ -1,13 +1,18 @@
 const reducer = (state, action) => {
   if (action.type === "CLEAR_CART") {
+    localStorage.removeItem("cart");
     return { ...state, cart: [] };
   }
 
   if (action.type === "REMOVE") {
-    return {
+    const tempState = {
       ...state,
       cart: state.cart.filter((cartItem) => cartItem.id !== action.payload),
     };
+
+    localStorage.setItem("cart", JSON.stringify(tempState.cart));
+
+    return tempState;
   }
 
   if (action.type === "INCREASE") {
@@ -17,7 +22,7 @@ const reducer = (state, action) => {
       }
       return cartItem;
     });
-
+    localStorage.setItem("cart", JSON.stringify(tempCart));
     return { ...state, cart: tempCart };
   }
 
@@ -30,33 +35,19 @@ const reducer = (state, action) => {
         return cartItem;
       })
       .filter((cartItem) => cartItem.amount !== 0);
+    localStorage.setItem("cart", JSON.stringify(tempCart));
     return { ...state, cart: tempCart };
   }
 
-  if (action.type === "ADD") {
-    let tempCart;
-    if (state.cart.find((element) => element.id === action.payload.id)) {
-      tempCart = state.cart.map((cartItem) => {
-        if (cartItem.id === action.payload.id) {
-          return { ...cartItem, amount: cartItem.amount + 1 };
-        }
-        return cartItem;
-      });
-    } else {
-      let newItem;
-      if (state.cart.length === 0) {
-        newItem = { ...action.payload, amount: 1 };
-      } else {
-        newItem = { ...action.payload, amount: 0 };
-      }
-      let newCart = state.cart;
+  if (action.type === "ADD_NEW") {
+    let newState = { ...state };
+    let newPayload = action.payload;
 
-      newCart.push(newItem);
-      return { ...state, cart: newCart };
-    }
-
-    return { ...state, cart: tempCart };
+    newState.cart.push(newPayload);
+    localStorage.setItem("cart", JSON.stringify(newState.cart));
+    return newState;
   }
+
   return state;
 };
 

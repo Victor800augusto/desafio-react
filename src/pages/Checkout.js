@@ -36,7 +36,7 @@ const Checkout = () => {
   if (cart.length === 0) {
     return (
       <CartItemEmpty>
-        <h1>Carrinho vazinho</h1>
+        <h1>Carrinho vazio</h1>
 
         <Button>
           <Link to="/">Voltar para a página principal</Link>
